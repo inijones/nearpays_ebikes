@@ -1,0 +1,43 @@
+import 'package:flutter/material.dart';
+
+class AppColor{
+  static const Color white = Color(0xFFFFFFFF);
+  static const Color lightBlue = Color(0xFFF1F6FB);
+  static const Color black = Color(0xFF000000);
+  static const Color mediumGrayBlue = Color(0xFF7A809D);
+  static const Color darkGrayBlue = Color(0xFF2E3E5C);
+  static const Color lightGray = Color(0xFFBBBFD0);
+  static const Color darkBlue = Color(0xFF1E3354);
+  static const Color gold = Color(0xFF96823D);
+  static const Color brightYellow = Color(0xFFFFD337);
+  static const Color veryDarkBlue = Color(0xFF031420);
+  static const Color veryLightBlue = Color(0xFFE5F0FC);
+  static const Color darkNavyBlue = Color(0xFF051F32);
+  static const Color navyBlue = Color(0xFF092C4C);
+  static const Color darkPurple = Color(0xFF200E32);
+  static const Color lightBrown = Color(0xFFDC8061);
+  static const Color goldYellow = Color(0xFFEDC127);
+  static const Color brightRed = Color(0xFFF22C09);
+  static const Color darkBrown = Color(0xFF8F3A1E);
+  static const Color mediumBrown = Color(0xFFB75230);
+  static const Color gray = Color(0xFFC4C4C4);
+  static const Color veryDarkNavy = Color(0xFF02131E);
+  static const Color grayBlue = Color(0xFF3B4A66);
+  static const Color veryLightGray = Color(0xFFDBE2E9);
+  static const Color lightGrayBlue = Color(0xFFDFE6ED);
+  static const Color lightGrayBlue2 = Color(0xFFE3E8EC);
+  static const Color brightOrangeRed = Color(0xFFFA402F);
+  static const Color veryLightPeach = Color(0xFFFAEBDA);
+  static const Color brightCoral = Color(0xFFFF6661);
+  static const Color semiTransparentBlack = Color(0x80000000);
+  static const Color darkNavy = Color(0xFF031522);
+  static const Color darkerNavy = Color(0xFF031725);
+  static const Color darkNavy2 = Color(0xFF041C2E);
+  static const Color brightGreen = Color(0xFF28B446);
+  static const Color mediumGray = Color(0xFF424242);
+  static const Color brightBlue = Color(0xFF518EF8);
+  static const Color brightRed2 = Color(0xFFF14336);
+  static const Color lightBlueCC = Color(0xCCF1F6FB);
+  static const Color brightYellow2 = Color(0xFFFBBB00);
+  static const Color brightYellow3 = Color(0xFFFFCE23);
+}
