@@ -1,10 +1,9 @@
-
 import 'package:e_bikes/components/button.dart';
 import 'package:e_bikes/components/text_widget.dart';
 import 'package:e_bikes/config/navigator.dart';
 import 'package:e_bikes/constants/app_assets_path.dart';
 import 'package:e_bikes/constants/app_colors.dart';
-import 'package:e_bikes/features/home/view/component/home_page.dart';
+import 'package:e_bikes/features/track/view/track_screen.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -39,7 +38,7 @@ class YellowBannerWidget extends StatelessWidget {
             AppOutlinedButton(
               width: 183.w,
               onPressed: () {
-                navigate(context, const HomePage());
+                navigate(context, const TrackScreen());
               },
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10.0.w),

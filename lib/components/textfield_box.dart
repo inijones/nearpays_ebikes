@@ -1,6 +1,7 @@
+import 'package:e_bikes/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // Reusable TextField used App Wide
 class TextFieldBox extends StatelessWidget {
@@ -94,7 +95,7 @@ class TextFieldBox extends StatelessWidget {
         cursorColor: Colors.black,
         decoration: InputDecoration(
           contentPadding:
-              EdgeInsets.symmetric(horizontal: 24, vertical: 10),
+              const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
           suffixIcon: suffixIcon,
           prefixIcon: prefixIcon,
           prefixText: prefixText,
@@ -113,8 +114,8 @@ class TextFieldBox extends StatelessWidget {
               color: borderColor ?? Colors.transparent,
               width: 2,
             ),
-            borderRadius: const BorderRadius.all(
-              Radius.circular(8),
+            borderRadius: BorderRadius.all(
+              Radius.circular(28.r),
             ),
           ),
           focusedBorder: const OutlineInputBorder(
@@ -126,7 +127,7 @@ class TextFieldBox extends StatelessWidget {
             ),
           ),
           errorBorder: const OutlineInputBorder(
-            borderSide:  BorderSide(
+            borderSide: BorderSide(
               color: Colors.red,
             ),
             borderRadius: BorderRadius.all(
@@ -135,11 +136,11 @@ class TextFieldBox extends StatelessWidget {
           ),
           hintText: hintText,
           hintStyle: hintStyle ??
-              const TextStyle(
+              TextStyle(
                 fontFamily: 'Inter',
                 fontWeight: FontWeight.w400,
-                fontSize: 14,
-                color:  Color(0x805F6D7E),
+                fontSize: 14.sp,
+                color: AppColor.veryDarkBlue,
               ),
         ),
       ),

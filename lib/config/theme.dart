@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 //TODO: update zeeh colors.
@@ -26,7 +27,7 @@ ThemeData theme() {
     //   TargetPlatform.android: CupertinoPageTransitionsBuilder(),
     //   TargetPlatform.iOS: CupertinoPageTransitionsBuilder()
     // }),
-    fontFamily: 'WorkSans',
+    fontFamily: 'Inter',
     appBarTheme: const AppBarTheme(
       backgroundColor: Color(0xffFFFFFF),
       elevation: 0,
@@ -40,20 +41,20 @@ ThemeData theme() {
         ),
       ),
     ),
-    inputDecorationTheme: const InputDecorationTheme(
+    inputDecorationTheme:  InputDecorationTheme(
       hintStyle: TextStyle(
         color: Colors.black,
-        fontFamily: 'WorkSans',
-        fontSize: 14,
+        fontFamily: 'Inter',
+        fontSize: 14.sp,
         fontWeight: FontWeight.w400,
       ),
-      enabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(
+      enabledBorder:  OutlineInputBorder(
+        borderSide: const  BorderSide(
           width: 1,
           color: Colors.black,
         ),
         borderRadius: BorderRadius.all(
-          Radius.circular(8),
+          Radius.circular(28.r),
         ),
       ),
     ),
