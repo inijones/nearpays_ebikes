@@ -1,16 +1,10 @@
-import 'package:e_bikes/components/button.dart';
 import 'package:e_bikes/components/text_widget.dart';
-import 'package:e_bikes/components/textfield_box.dart';
-import 'package:e_bikes/config/navigator.dart';
-import 'package:e_bikes/constants/app_assets_path.dart';
 import 'package:e_bikes/constants/app_colors.dart';
 import 'package:e_bikes/features/home/view/component/history_widget.dart';
 import 'package:e_bikes/features/home/view/component/home_appbar.dart';
 import 'package:e_bikes/features/home/view/component/track_package_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class TrackScreen extends StatefulWidget {
   const TrackScreen({super.key});
