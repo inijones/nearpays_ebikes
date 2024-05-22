@@ -1,5 +1,4 @@
 class AppAssets {
-
   // App Icons
   // Delivery Ride
   static const String appIcon = 'assets/icons/delivery_ride.svg';
@@ -19,7 +18,7 @@ class AppAssets {
   // Avatar Imaeg
   static const String avatar = 'assets/images/avatar.png';
   // bike image
-  static const String bike = 'assets/images/bike.png';
+  static const String bike = 'assets/images/bike_image.png';
   // building imaeg
   static const String building = 'assets/images/buildings.png';
   // login bg
@@ -29,6 +28,13 @@ class AppAssets {
   // track bg
   static const String trackBg = 'assets/images/track_bg.png';
   // tracking details image
-  static const String trackingDetails = 'assets/images/tracking_details_image.png';
-  
+  static const String trackingDetails =
+      'assets/images/tracking_details_image.png';
+
+  // Bottom Navigation Svg Icons
+  // Home, Markey, Settings, Cart
+  static const String homeIcon = 'assets/icons/home_icon.svg';
+  static const String markeyIcon = 'assets/icons/markey_icon.svg';
+  static const String settingsIcon = 'assets/icons/settings_icon.svg';
+  static const String cartIcon = 'assets/icons/cart_icon.svg';
 }

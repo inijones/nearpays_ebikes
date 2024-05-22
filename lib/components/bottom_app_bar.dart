@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 class CustomBottomAppBarItem {
@@ -64,7 +65,8 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
     return SizedBox(
       child: BottomAppBar(
         elevation: 0,
-        shape: widget.notchedShape,
+        height: 70.h,
+        color: const Color(0xffF1F6FB),
         child: Padding(
           padding: const EdgeInsets.only(
             bottom: 8.0,
@@ -102,8 +104,8 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
               SvgPicture.asset(
                 item!.imageData,
                 color: color,
-                height: 28,
-                width: 34,
+                height: 24.h,
+                width: 24.w,
               ),
             ],
           ),
