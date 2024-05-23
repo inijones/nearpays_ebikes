@@ -7,6 +7,7 @@ import 'package:e_bikes/features/track/view/track_screen.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:shimmer/shimmer.dart';
 
 class YellowBannerWidget extends StatelessWidget {
   const YellowBannerWidget({
@@ -42,15 +43,19 @@ class YellowBannerWidget extends StatelessWidget {
               },
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10.0.w),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    InterText(text: "Your Orders", fontSize: 14.sp),
-                    const Spacer(),
-                    SvgPicture.asset(
-                      AppAssets.forwardArrow,
-                    ),
-                  ],
+                child: Shimmer.fromColors(
+                  baseColor: AppColor.white,
+                  highlightColor: AppColor.semiTransparentBlack,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      InterText(text: "Your Orders", fontSize: 14.sp),
+                      const Spacer(),
+                      SvgPicture.asset(
+                        AppAssets.forwardArrow,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

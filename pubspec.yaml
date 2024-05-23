@@ -28,6 +28,7 @@ dependencies:
   fluttertoast: ^8.2.5
   logger: ^2.2.0
   sliding_up_panel: ^2.0.0+1
+  shimmer: ^3.0.0
 
 
 

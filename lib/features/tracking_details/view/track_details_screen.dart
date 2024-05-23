@@ -2,6 +2,7 @@ import 'package:e_bikes/components/text_widget.dart';
 import 'package:e_bikes/constants/app_colors.dart';
 import 'package:e_bikes/features/tracking_details/components/collapsed_widget.dart';
 import 'package:e_bikes/features/tracking_details/components/track_details_container.dart';
+import 'package:e_bikes/features/tracking_details/components/tracking_history_widget.dart';
 import 'package:e_bikes/features/tracking_details/components/tracking_map.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -80,8 +81,43 @@ class _TrackDetailsScreenState extends State<TrackDetailsScreen> {
 
                   /// Details Widget
                   // Yellow Container
+                  const TrackingContainerWidget(),
 
-                  TrackingContainerWidget(),
+                  SizedBox(height: 20.h),
+
+                  // History
+                  InterText(
+                    text: "History",
+                    textColor: AppColor.darkGrayBlue,
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w600,
+                  ),
+
+                  SizedBox(height: 20.h),
+
+                  // History Widget
+                  const Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      TrackingHistoryWidget(
+                        imageBgColor: AppColor.brightYellow,
+                        imageText: "🚚",
+                      ),
+                      TrackingHistoryWidget(
+                        imageText: "📬",
+                        title: "Transit - Sending City",
+                        subtitle: "Jarkata, Indonesia",
+                        time: "21:00 PM",
+                      ),
+                      TrackingHistoryWidget(
+                        imageText: "📦",
+                        title: "Send from Sukabumi",
+                        subtitle: "Sukabumi, Indonesia",
+                        time: "19:00 PM",
+                        showLine: false,
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),

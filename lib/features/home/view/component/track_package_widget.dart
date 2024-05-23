@@ -8,6 +8,7 @@ import 'package:e_bikes/features/tracking_details/view/track_details_screen.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:shimmer/shimmer.dart';
 
 class TrackPackageWidget extends StatelessWidget {
   const TrackPackageWidget({
@@ -70,15 +71,19 @@ class TrackPackageWidget extends StatelessWidget {
                 },
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 5.0.w),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      InterText(text: "Track Now", fontSize: 14.sp),
-                      const Spacer(),
-                      SvgPicture.asset(
-                        AppAssets.forwardArrow,
-                      ),
-                    ],
+                  child: Shimmer.fromColors(
+                    baseColor: AppColor.white,
+                    highlightColor: AppColor.semiTransparentBlack,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        InterText(text: "Track Now", fontSize: 14.sp),
+                        const Spacer(),
+                        SvgPicture.asset(
+                          AppAssets.forwardArrow,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

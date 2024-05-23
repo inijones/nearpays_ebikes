@@ -1,8 +1,9 @@
-
 import 'package:e_bikes/components/text_widget.dart';
+import 'package:e_bikes/constants/app_assets_path.dart';
 import 'package:e_bikes/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
 class CollapsedWidget extends StatelessWidget {
   const CollapsedWidget({
@@ -34,20 +35,26 @@ class CollapsedWidget extends StatelessWidget {
             ),
           ),
           SizedBox(height: 20.h),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          Row(
             children: [
-              InterText(
-                text: "Estimate arrives in",
-                textColor: AppColor.mediumGrayBlue,
-                fontSize: 14.sp,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  InterText(
+                    text: "Estimate arrives in",
+                    textColor: AppColor.mediumGrayBlue,
+                    fontSize: 14.sp,
+                  ),
+                  InterText(
+                    text: "2h 40m",
+                    textColor: AppColor.darkGrayBlue,
+                    fontSize: 24.sp,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ],
               ),
-              InterText(
-                text: "2h 40m",
-                textColor: AppColor.darkGrayBlue,
-                fontSize: 24.sp,
-                fontWeight: FontWeight.w600,
-              ),
+              const Spacer(),
+              SvgPicture.asset(AppAssets.twoDots),
             ],
           ),
         ],

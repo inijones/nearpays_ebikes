@@ -3,7 +3,7 @@ import 'package:e_bikes/constants/app_assets_path.dart';
 import 'package:e_bikes/constants/app_colors.dart';
 import 'package:e_bikes/features/home/view/component/bike_widget.dart';
 import 'package:e_bikes/features/home/view/component/home_appbar.dart';
-import 'package:e_bikes/features/home/view/yellow_banner_widget.dart';
+import 'package:e_bikes/features/home/view/component/yellow_banner_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';

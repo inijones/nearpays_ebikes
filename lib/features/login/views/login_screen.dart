@@ -7,6 +7,8 @@ import 'package:e_bikes/features/home/view/component/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:shimmer/shimmer.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -16,6 +18,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  PageController pageController = PageController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,6 +61,21 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               SizedBox(height: 30.h),
 
+              Center(
+                child: SmoothPageIndicator(
+                  controller: pageController,
+                  count: 3,
+                  effect: SlideEffect(
+                    dotHeight: 6.sp,
+                    dotWidth: 6.sp,
+                    activeDotColor: AppColor.black,
+                    dotColor: AppColor.white,
+                  ),
+                ),
+              ),
+
+              SizedBox(height: 30.h),
+
               // Login with Google
               AppOutlinedButton(
                 onPressed: () {
@@ -71,13 +90,20 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 32.h,
                     ),
                     const Spacer(),
-                    InterText(text: "Login with Google", fontSize: 14.sp),
+                    Shimmer.fromColors(
+                      baseColor: AppColor.white,
+                      highlightColor: AppColor.semiTransparentBlack,
+                      child: InterText(
+                        text: "Login with Google",
+                        fontSize: 14.sp,
+                      ),
+                    ),
                     const Spacer(),
                     SizedBox(width: 32.w),
                   ],
                 ),
               ),
-              SizedBox(height: 40.h),
+              SizedBox(height: 60.h),
 
               // Don't have an account Sign Up
               Row(
