@@ -37,4 +37,9 @@ class AppAssets {
   static const String markeyIcon = 'assets/icons/markey_icon.svg';
   static const String settingsIcon = 'assets/icons/settings_icon.svg';
   static const String cartIcon = 'assets/icons/cart_icon.svg';
+
+  // tracking details screen
+  static const String mapImage = 'assets/images/tracking_details_screen.png';
+  // two dots
+  static const String twoDots = 'assets/icons/two_dots.svg';
 }
