@@ -5,7 +5,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class BikeWidget extends StatelessWidget {
   const BikeWidget({
     super.key,
+    this.image,
   });
+
+  final String? image;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +24,7 @@ class BikeWidget extends StatelessWidget {
       ),
       child: Center(
         child: Image.asset(
-          AppAssets.bike,
+          image ?? AppAssets.bike,
           height: 229.h,
           width: 199.w,
         ),

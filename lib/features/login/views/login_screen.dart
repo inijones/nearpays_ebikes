@@ -1,27 +1,47 @@
+import 'package:e_bikes/components/app_snackbar.dart';
 import 'package:e_bikes/components/button.dart';
 import 'package:e_bikes/components/text_widget.dart';
 import 'package:e_bikes/config/navigator.dart';
 import 'package:e_bikes/constants/app_assets_path.dart';
 import 'package:e_bikes/constants/app_colors.dart';
 import 'package:e_bikes/features/home/view/component/home_page.dart';
+import 'package:e_bikes/features/login/data/provider.dart';
+import 'package:e_bikes/features/login/data/state/state.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  ConsumerState<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginScreenState extends ConsumerState<LoginScreen> {
   PageController pageController = PageController();
+
+  void loginUser(WidgetRef ref) {
+    ref.read(loginUserNotifierProvider.notifier).loginUser();
+  }
 
   @override
   Widget build(BuildContext context) {
+    final state = ref.watch(loginUserNotifierProvider);
+
+    ref.listen(loginUserNotifierProvider, (previous, next) {
+      if (next is LoginUserFailureState) {
+        AppSnackbar(context, isError: true).showToast(text: "Login Failed");
+      }
+      if (next is LoginUserSuccessState) {
+        AppSnackbar(context).showToast(text: "Login Successfully");
+        navigate(context, const HomePage());
+      }
+    });
+
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -77,32 +97,37 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(height: 30.h),
 
               // Login with Google
-              AppOutlinedButton(
-                onPressed: () {
-                  navigate(context, const HomePage());
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SvgPicture.asset(
-                      AppAssets.googleIcon,
-                      width: 32.w,
-                      height: 32.h,
-                    ),
-                    const Spacer(),
-                    Shimmer.fromColors(
-                      baseColor: AppColor.white,
-                      highlightColor: AppColor.semiTransparentBlack,
-                      child: InterText(
-                        text: "Login with Google",
-                        fontSize: 14.sp,
+
+              if (state is LoginUserLoadingState)
+                const CircularProgressIndicator(
+                  color: Colors.white,
+                  strokeWidth: 2,
+                )
+              else
+                AppOutlinedButton(
+                  onPressed: () => loginUser(ref),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      SvgPicture.asset(
+                        AppAssets.googleIcon,
+                        width: 32.w,
+                        height: 32.h,
                       ),
-                    ),
-                    const Spacer(),
-                    SizedBox(width: 32.w),
-                  ],
+                      const Spacer(),
+                      Shimmer.fromColors(
+                        baseColor: AppColor.white,
+                        highlightColor: AppColor.semiTransparentBlack,
+                        child: InterText(
+                          text: "Login with Google",
+                          fontSize: 14.sp,
+                        ),
+                      ),
+                      const Spacer(),
+                      SizedBox(width: 32.w),
+                    ],
+                  ),
                 ),
-              ),
               SizedBox(height: 60.h),
 
               // Don't have an account Sign Up

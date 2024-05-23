@@ -49,11 +49,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           controller: pageController,
                           scrollDirection: Axis.horizontal,
                           physics: const BouncingScrollPhysics(),
-                          children: [
-                            ...List.generate(
-                              4,
-                              (index) => const BikeWidget(),
-                            ),
+                          children: const [
+                            BikeWidget(),
+                            BikeWidget(image: "assets/images/bike2.png"),
+                            BikeWidget(image: "assets/images/bike3.png"),
+                            BikeWidget(image: "assets/images/bike4.jpeg"),
                           ],
                         ),
                       ),

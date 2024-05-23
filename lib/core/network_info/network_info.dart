@@ -14,18 +14,24 @@ class NetworkInfoImpl implements NetworkInfo {
   @override
   Future<bool> get isConnected async {
     final connectivityResult = await Connectivity().checkConnectivity();
+    
+    bool result = false;
 
-    if (connectivityResult == ConnectivityResult.mobile) {
-      return checkDataConnection();
-    } else if (connectivityResult == ConnectivityResult.wifi) {
-      return checkDataConnection();
-    } else if (connectivityResult == ConnectivityResult.bluetooth) {
-      return checkDataConnection();
-    } else if (connectivityResult == ConnectivityResult.ethernet) {
-      return checkDataConnection();
-    } else {
-      return false;
+    for (ConnectivityResult item in connectivityResult) {
+      if (item == ConnectivityResult.mobile) {
+        result = await checkDataConnection();
+      } else if (item == ConnectivityResult.wifi) {
+        result = await checkDataConnection();
+      } else if (item == ConnectivityResult.bluetooth) {
+        result = await checkDataConnection();
+      } else if (item == ConnectivityResult.ethernet) {
+        result = await checkDataConnection();
+      } else {
+        result = false;
+      }
     }
+
+    return result;
   }
 
   Future<bool> checkDataConnection() async {
